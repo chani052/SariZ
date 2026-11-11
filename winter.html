@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>חורף</title>
+<style>
+  :root {
+    --bg1: #0b1d3a;
+    --bg2: #1c3d6e;
+    --bg3: #6fa8dc;
+    --ice: #e8f4ff;
+    --accent: #ffd27a;
+    --card: rgba(255,255,255,0.10);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: var(--ice);
+    background: linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 55%, var(--bg3) 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+    line-height: 1.8;
+    overflow-x: hidden;
+  }
+  .snow { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
+  .flake {
+    position: absolute; top: -10vh; color: #fff; opacity: .85;
+    animation: fall linear infinite;
+    user-select: none;
+  }
+  @keyframes fall {
+    to { transform: translateY(115vh) translateX(40px) rotate(360deg); }
+  }
+  header, main, footer { position: relative; z-index: 1; }
+  header {
+    text-align: center;
+    padding: 90px 20px 60px;
+  }
+  header h1 {
+    font-size: clamp(3rem, 9vw, 6rem);
+    letter-spacing: 6px;
+    background: linear-gradient(90deg, #fff, #9fd3ff, #fff);
+    -webkit-background-clip: text; background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 40px rgba(159,211,255,.35);
+  }
+  header p {
+    max-width: 640px; margin: 18px auto 0;
+    font-size: 1.25rem; opacity: .92;
+  }
+  .divider { font-size: 1.6rem; margin-top: 22px; letter-spacing: 14px; color: var(--accent); }
+  main { max-width: 1050px; margin: 0 auto; padding: 0 20px 60px; }
+  .grid {
+    display: grid; gap: 22px;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid rgba(255,255,255,.22);
+    border-radius: 20px;
+    padding: 28px 24px;
+    backdrop-filter: blur(8px);
+    transition: transform .3s, box-shadow .3s;
+  }
+  .card:hover { transform: translateY(-8px); box-shadow: 0 16px 40px rgba(0,0,0,.35); }
+  .card .icon { font-size: 2.6rem; }
+  .card h2 { margin: 8px 0 10px; color: var(--accent); font-size: 1.4rem; }
+  section.wide {
+    margin-top: 40px;
+    background: rgba(255,255,255,.08);
+    border-radius: 24px;
+    padding: 34px 30px;
+    border-right: 6px solid var(--accent);
+  }
+  section.wide h2 { font-size: 1.8rem; margin-bottom: 12px; }
+  ul { padding-right: 22px; }
+  li { margin: 6px 0; }
+  .facts { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 40px; justify-content: center; }
+  .fact {
+    flex: 1 1 200px; text-align: center;
+    background: linear-gradient(160deg, rgba(255,255,255,.18), rgba(255,255,255,.05));
+    border-radius: 18px; padding: 24px 12px;
+  }
+  .fact b { display: block; font-size: 2.4rem; color: #fff; }
+  .fact span { opacity: .85; }
+  footer { text-align: center; padding: 30px 20px 50px; opacity: .8; }
+</style>
+</head>
+<body>
+
+<div class="snow" id="snow"></div>
+
+<header>
+  <h1>חורף</h1>
+  <p>עונת הקור, הגשמים והשלג — זמן של שקט, חמימות ושל הנאה מהדברים הפשוטים.</p>
+  <div class="divider">❄ ❄ ❄</div>
+</header>
+
+<main>
+  <div class="grid">
+    <article class="card">
+      <div class="icon">🌧️</div>
+      <h2>גשם וברכה</h2>
+      <p>הגשמים ממלאים את מקורות המים, משקים את האדמה ומכינים אותה לצמיחה. בחורף הטבע נח, ובאביב הוא מתעורר מחדש.</p>
+    </article>
+    <article class="card">
+      <div class="icon">☕</div>
+      <h2>משקאות חמים</h2>
+      <p>כוס תה עם לימון, שוקו חם או מרק ירקות מהבילים הם חלק בלתי נפרד מהחורף. החום שבכוס מחמם את הידיים ואת הלב.</p>
+    </article>
+    <article class="card">
+      <div class="icon">🧣</div>
+      <h2>ללבוש בהתאמה</h2>
+      <p>הדרך הטובה ביותר להתמודד עם הקור היא שכבות: חולצה תרמית, סוודר ומעיל עבה. צעיף וכפפות שומרים על החום בקצוות הגוף.</p>
+    </article>
+  </div>
+
+  <section class="wide">
+    <h2>איך נוצר פתית שלג?</h2>
+    <p>
+      כאשר אדים בענן קופאים סביב גרגיר אבק זעיר, נוצרת גבישית קטנה. הגבישית גדלה כשמולקולות מים נוספות נצמדות אליה,
+      והיא מקבלת צורה משושה סימטרית. הטמפרטורה והלחות באוויר קובעות אם הפתית יהיה דמוי כוכב, מחט או לוחית שטוחה.
+    </p>
+  </section>
+
+  <section class="wide">
+    <h2>טיפים לחורף נעים</h2>
+    <ul>
+      <li>לשתות הרבה מים, גם כשלא מרגישים צמא.</li>
+      <li>לאוורר את הבית מעט בכל יום, גם בקור.</li>
+      <li>לאכול מרקים וירקות שורש עונתיים.</li>
+      <li>להקפיד על שינה מסודרת ולשמור על חום הגוף.</li>
+      <li>להכין שמיכה חמה וספר טוב לערבים הארוכים.</li>
+    </ul>
+  </section>
+
+  <div class="facts">
+    <div class="fact"><b>3</b><span>חודשי חורף עיקריים</span></div>
+    <div class="fact"><b>6</b><span>צלעות בפתית שלג</span></div>
+    <div class="fact"><b>0°</b><span>נקודת הקפיאה של מים</span></div>
+    <div class="fact"><b>100%</b><span>חמימות בכוס תה</span></div>
+  </div>
+</main>
+
+<footer>חורף נעים ובריא ❄</footer>
+
+<script>
+  const snow = document.getElementById('snow');
+  const symbols = ['❄', '❅', '❆', '•'];
+  for (let i = 0; i < 60; i++) {
+    const f = document.createElement('span');
+    f.className = 'flake';
+    f.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+    f.style.left = Math.random() * 100 + 'vw';
+    f.style.fontSize = (10 + Math.random() * 22) + 'px';
+    f.style.animationDuration = (8 + Math.random() * 12) + 's';
+    f.style.animationDelay = (-Math.random() * 20) + 's';
+    f.style.opacity = 0.4 + Math.random() * 0.6;
+    snow.appendChild(f);
+  }
+</script>
+</body>
+</html>
